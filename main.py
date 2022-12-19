@@ -7,6 +7,7 @@ pronouns = ('I', 'You', 'We', 'They', 'He', 'She')
 structural_proposal = ['Will', 'Do' 'Does', 'Did', 'not', '?', 's', 'ed']
 
 
+
 def verb_conjugation(infinitive, irregular_verb=False):
     """
     Добавляет глагол в множество правильных глаголов или к словарю неправильных
@@ -38,14 +39,14 @@ def sentence_constructor():
             result = f'Do {pronoun} {verb}?'
     elif num == 5:
         if pronoun in ['He', 'She']:
-            result = f'{pronoun} {verb}'
-        else:
             result = f'{pronoun} {verb}s'
+        else:
+            result = f'{pronoun} {verb}'
     elif num == 6:
         if pronoun in ['He', 'She']:
-            result = f'{pronoun} don\'t {verb}'
-        else:
             result = f'{pronoun} doesn\'t {verb}'
+        else:
+            result = f'{pronoun} don\'t {verb}'
     elif num == 7:
         result = f'Did {pronoun} {verb}?'
     elif num == 8:
@@ -55,12 +56,13 @@ def sentence_constructor():
             verb += 'ed'
         result = f'{pronoun} {verb}'
     elif num == 9:
-        result = f'{pronoun} did\'t {verb}'
-    return result
+        result = f'{pronoun} didn\'t {verb}'
+    return result.capitalize()
 
 
 # Перевод на русский
+def get_translate(word):
+    translator = Translator()
+    result_text = translator.translate(word, src='en', dest='ru')
+    return result_text.text
 
-translator = Translator()
-result_text = translator.translate(sentence_constructor(), src='en', dest='ru')
-print(result_text.text)
