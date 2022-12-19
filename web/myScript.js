@@ -9,7 +9,7 @@ async function getWord () {
         }
 function examination () {
     
-     let result = englishWord === getInputValue();
+     let result = englishWord.toLowerCase() === getInputValue();
 
         if (result){
        oknotrue.toggle();
@@ -22,13 +22,9 @@ function examination () {
     function getInputValue(){
         // Выбор элемента input и получение его значения
         let inputVal = document.getElementById("userInput").value;
-        return inputVal
+        return inputVal.toLowerCase()
     }
 
-
-function showAlert(event) {
-    alert("onclick Event detected!");
-  }
  document.addEventListener("DOMContentLoaded", getWord);
   
  document.getElementById("submit").addEventListener("click", examination);

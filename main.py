@@ -1,10 +1,12 @@
 from random import randint
 from googletrans import Translator
 
-verbs = ['love', 'live', 'like']
-irregular_verbs = {}
+verbs = ['love', 'live', 'like' 'say', 'go', 'can', 'look', 'know', 'get',
+         'come', 'see', 'think', 'make', 'want']
+irregular_verbs = {'say': 'said', 'go': 'went', 'can': 'could', 'know': 'knew',
+                   'get': 'got', 'come': 'came', 'see': 'saw',
+                   'think': 'thought','make': 'made'}
 pronouns = ('I', 'You', 'We', 'They', 'He', 'She')
-structural_proposal = ['Will', 'Do' 'Does', 'Did', 'not', '?', 's', 'ed']
 
 
 
